@@ -1,0 +1,106 @@
+body {
+    background-image: url(img/wallpaper.jpg); 
+    background-size: cover;
+}
+
+#container {
+    min-height: 45vh;
+    min-width: 100vw;
+    display: flex;
+}
+
+.player-0-panel {
+    background-color: rgba(113, 111, 111, 0.4);
+    text-align: center;
+}
+
+.player-1-panel {
+    background-color: rgba(161, 142, 71, 0.4);
+    text-align: center;
+}
+
+.player-0-panel,
+.player-1-panel {
+    width: 50vw;
+    color: rgb(14, 36, 145);
+}
+
+.player-score {
+    color: rgb(204, 0, 0);
+}
+
+.dice {
+    width: 220px;
+    margin: 15px;
+}
+
+button {
+    width: 28%;
+    height: 60px;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgb(135, 125, 90);
+    color: rgb(1, 13, 73);
+    cursor: pointer;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.buttons {
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+button:hover {
+    color: rgb(14, 36, 145);
+    background-color: rgb(161, 142, 71);
+}
+
+button:active {
+    color: rgb(41, 69, 212);;
+    background-color: rgb(210, 172, 33);
+}
+
+.player-name {
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+
+}
+
+.player-score {
+    font-size: 95px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.player-current-label-0,
+.player-current-label-1 {
+    font-size: 35px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.player-current-score {
+    font-size: 60px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+#current-or-winner-player-0,
+#current-or-winner-player-1 {
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgb(204, 0, 0);
+}
+
+
+.dice-box {
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+}
