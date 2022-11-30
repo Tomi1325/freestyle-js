@@ -24,8 +24,8 @@ function init() {
     document.getElementById('name-0').textContent = 'Player X';
     document.getElementById('name-1').textContent = 'Player Y';
 
-    document.querySelector(`#current-or-winner-player-0`).textContent = 'Current player';
-    document.querySelector(`#current-or-winner-player-1`).textContent = '';
+    document.querySelector('#current-or-winner-player-0').textContent = 'Current player';
+    document.querySelector('#current-or-winner-player-1').textContent = '';
 
     buttonNew.textContent = 'NEW GAME';
     buttonRoll.textContent = 'ROLL THE DICE';
@@ -72,8 +72,6 @@ buttonHold.addEventListener('click', function () {
     // did the player win?
     if (scores[currentPlayer] >= 100) {
         document.querySelector(`#current-or-winner-player-${currentPlayer}`).textContent = 'Winner!';
-        document.querySelector(`.player-${currentPlayer}-panel`).classList.add('winner');
-        document.querySelector(`.player-${currentPlayer}-panel`).classList.remove('active');
         isGameOn = false;
     } else {
         document.querySelector(`#current-or-winner-player-${currentPlayer}`).textContent = '';
