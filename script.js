@@ -1,3 +1,8 @@
+const dice = document.querySelector('.dice');
+const buttonNew = document.querySelector('.button-new');
+const buttonRoll = document.querySelector('.button-roll');
+const buttonHold = document.querySelector('.button-hold');
+
 init();
 
 // initial values
@@ -7,8 +12,8 @@ function init() {
     roundScores = 0;
     isGameOn = true;
 
-    document.querySelector('.dice').src = 'img/dice-1.png';
-    document.querySelector('.dice').style.visibility = 'hidden';
+    dice.src = 'img/dice-1.png';
+    dice.style.visibility = 'hidden';
     document.getElementById('score-0').textContent = 0;
     document.getElementById('score-1').textContent = 0;
     document.querySelector('.player-current-label-0').textContent = 'round points:';
@@ -22,13 +27,13 @@ function init() {
     document.querySelector(`#current-or-winner-player-0`).textContent = 'Current player';
     document.querySelector(`#current-or-winner-player-1`).textContent = '';
 
-    document.querySelector('.button-new').textContent = 'NEW GAME';
-    document.querySelector('.button-roll').textContent = 'ROLL THE DICE';
-    document.querySelector('.button-hold').textContent = 'I HOLD IT';
+    buttonNew.textContent = 'NEW GAME';
+    buttonRoll.textContent = 'ROLL THE DICE';
+    buttonHold.textContent = 'I HOLD IT';
 }
 
 // event handler of the roll button
-document.querySelector('.button-roll').addEventListener('click', function () {
+buttonRoll.addEventListener('click', function () {
 
     if (isGameOn) {
         document.querySelector(`#current-or-winner-player-${currentPlayer}`).textContent = 'Current player';
@@ -37,7 +42,7 @@ document.querySelector('.button-roll').addEventListener('click', function () {
         let randomNumber = Math.floor(Math.random() * 6) + 1;
 
         // display result
-        let dice = document.querySelector('.dice');
+
         dice.src = `img/dice-${randomNumber}.png`;
         dice.style.visibility = 'visible';
 
@@ -55,13 +60,13 @@ document.querySelector('.button-roll').addEventListener('click', function () {
 });
 
 // event handler of the hold button
-document.querySelector('.button-hold').addEventListener('click', function () {
+buttonHold.addEventListener('click', function () {
     if (isGameOn) {
-    // update total score in the code
-    scores[currentPlayer] += roundScores;
+        // update total score in the code
+        scores[currentPlayer] += roundScores;
 
-    // update total score in the user interface (UI)
-    document.querySelector(`#score-${currentPlayer}`).textContent = scores[currentPlayer];
+        // update total score in the user interface (UI)
+        document.querySelector(`#score-${currentPlayer}`).textContent = scores[currentPlayer];
     }
 
     // did the player win?
@@ -81,8 +86,10 @@ document.querySelector('.button-hold').addEventListener('click', function () {
 function nextPlayer() {
     currentPlayer === 0 ? currentPlayer = 1 : currentPlayer = 0;
     roundScores = 0;
+    document.getElementById('current-0').textContent = 0;
+    document.getElementById('current-1').textContent = 0;
     document.querySelector(`#current-or-winner-player-${currentPlayer}`).textContent = 'Current player';
 }
 
 // start a new game
-document.querySelector('.button-new').addEventListener('click', init);
+buttonNew.addEventListener('click', init);
